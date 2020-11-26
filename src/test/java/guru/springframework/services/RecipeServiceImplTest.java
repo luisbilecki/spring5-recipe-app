@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class RecipeServiceImplTest {
 
@@ -39,6 +41,6 @@ public class RecipeServiceImplTest {
         Set<Recipe> recipes = recipeService.getRecipes();
 
         assertEquals(recipes.size(), 1);
-        Mockito.verify(recipeRepository, Mockito.times(1)).findAll();
+        verify(recipeRepository, times(1)).findAll();
     }
 }
