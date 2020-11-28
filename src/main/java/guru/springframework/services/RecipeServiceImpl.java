@@ -43,6 +43,11 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    public void deleteById(Long l) {
+        recipeRepository.deleteById(l);
+    }
+
+    @Override
     public Recipe findById(Long l) {
 
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
